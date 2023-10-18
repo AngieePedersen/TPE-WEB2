@@ -1,0 +1,39 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fce4ec; /* Rosa claro */
+  border: 1px solid #ffccd1; /* Rosa más claro */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 10px;
+  width: 300px;
+  align-items: center;
+  transition: 0.6s;
+}
+
+.product-card:hover {
+  padding: 25px;
+  box-shadow: 0 2px 4px rgba(70, 5, 175, 0.1);
+  cursor: pointer;
+}
+
+.product-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  color: #fc40ae; /* Rosa más claro */
+}
+
+.product-size {
+  font-size: 16px;
+  margin: 0;
+  color: #f57fb6; /* Rosa más claro */
+}
+
+.product-description {
+  font-size: 14px;
+  margin: 0;
+  color: #f73998; /* Rosa más claro */
+}
+

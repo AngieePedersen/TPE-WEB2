@@ -1,0 +1,31 @@
+<?php require 'templates/partials/header.phtml'; ?>
+
+ <div class="form-container">
+    <form action="<?= $action === 'create-product' ? $action : $action . '?product-id=' . (isset($product) ? $product->IDproducto : '') ?>" method="POST" enctype="multipart/form-data">
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" id="name" value="<?= isset($product) && isset($product->Nombre) ? $product->Nombre : '' ?>"><br><br>
+
+        <label for="description">Product Description:</label>
+        <textarea name="description" id="description"><?= isset($product) && isset($product->Descripcion) ? $product->Descripcion : '' ?></textarea><br><br>
+
+        <label for="price">Size:</label>
+        <input type="number" name="size" id="size" step="0.01" value="<?= isset($product) && isset($product->Talle) ? $product->Talle : '' ?>"><br><br>
+        
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" step="0.01" value="<?= isset($product) && isset($product->Precio) ? $product->Precio : '' ?>"><br><br>
+
+    
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <?php foreach ($categories as $category) : ?>
+                <option value="<?= $category->IDcategoria ?>" <?= (isset($product) && isset($product->IDcategoria) && $product->IDcategoria == $category->IDcategoria) ? 'selected' : '' ?>>
+                    <?= $category->Nombre?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+
+        <input type="submit" value="Submit Product">
+    </form>
+</div>
+ 
+<?php require 'templates/partials/footer.phtml'; ?>

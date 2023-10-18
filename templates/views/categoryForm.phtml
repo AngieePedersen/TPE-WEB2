@@ -1,0 +1,9 @@
+<?php require 'templates/partials/header.phtml'; ?>
+
+<form method="post" action="<?= $action === 'create-category' ? $action : $action . (isset($category) && isset($category->IDcategoria) ? '?category_id=' . $category->IDcategoria : '') ?>" class="form-container">
+    <label for="category">Category</label>
+    <input type="text" name="category" id="category" value="<?= isset($category) && isset($category->Nombre) ? $category->Nombre : '' ?>">
+    <button type="submit">Submit category</button>
+</form>
+
+<?php require 'templates/partials/footer.phtml'; ?>

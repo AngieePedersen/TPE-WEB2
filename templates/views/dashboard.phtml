@@ -1,0 +1,59 @@
+<?php require 'templates/partials/header.phtml'; ?>
+
+<section class="dashboard__container">
+  <div><a href="product-form">Add Product</a></div>
+  <div><a  href="category-form">Add Category</a></div>
+
+  <div class="dashboard__products__container">
+    <div class="products__container-header">
+      <p>Id</p>
+      <p>Name</p>
+      <p>Description</p>
+      <p>Size</p>
+      <p>Price</p>
+      <p>Category</p>
+      <p>Edit</p>
+      <p>Delete</p>
+    </div>
+    <?php foreach ($products as $product): ?>
+
+       <div class="product">
+        <p><?= $product->IDproducto ?></p>
+        <p><?= $product->Nombre ?></p>
+        <p><?= $product->Descripcion ?></p>
+        <p><?= $product->Talle ?></p>
+        <p>$<?= $product->Precio ?></p>
+        <p><?= $product->IDcategoria ?></p>
+        <a href="product-form&product-id=<?= $product->IDproducto ?>">Edit</a>
+        <form method="POST" action="delete-product&product-id=<?= $product->IDproducto ?>">      
+          <button type="submit" class="delete-btn">Delete</button>
+       </form>
+      </div>
+    <?php endforeach; ?>
+
+   </div>
+
+   <div class="dashboard__categories__container">
+     <div class="categories__container-header">
+      <p>Id</p>
+      <p>Name</p>
+      <p>Edit</p>
+      <p>Delete</p>
+    </div>
+     <?php if ($categories): ?>
+      <?php foreach ($categories as $category): ?>
+          <div class="category">
+          <p><?= $category->IDcategoria ?></p>
+          <p><?= $category->Nombre ?></p> 
+          <a href="category-form&category_id=<?= $category->IDcategoria ?>">Edit</a>
+          <a href="delete-category&category_id=<?= $category->IDcategoria ?>" class="delete-btn">Delete</a>
+          </div>
+        <?php endforeach ?>
+      <?php endif ?>
+   </div>
+
+
+</section>
+
+ 
+<?php require 'templates/partials/footer.phtml'; ?>

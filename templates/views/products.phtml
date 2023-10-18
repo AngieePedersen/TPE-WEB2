@@ -1,0 +1,10 @@
+<?php foreach ($products as $product): ?>
+    <div class="product-card">
+<a href=" product&product_id=<?= $product->IDproducto ?>" class="product-name"><?= $product->Nombre ?></a>
+         <p class="product-name">$<?= $product->Precio ?></p>
+        <p class="product-size">Talle: <?= $product->Talle ?></p>
+        <p class="product-description"><?= $product->Descripcion ?></p>
+       
+    </div>
+
+    <?php endforeach; ?>

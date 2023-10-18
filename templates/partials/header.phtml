@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/card.css">
+    <title>Ginebra</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <a href="home" class="navbar__link">GINEBRA</a>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="home" class="navbar__link">Home</a>
+                </li>
+                 <li class="navbar__item">
+                    <a href="dashboard" class="navbar__link">Dashboard</a>
+                </li>
+ 
+                <?php if (!isset($_SESSION['USER_ID'])): ?>
+                    <li class="navbar__item">
+                        <a href="login" class="navbar__link">Login</a>
+                    </li>
+                <?php else : ?>
+                        <li class="nav-item">
+                    <a href="logout" class="navbar__link">Logout </a>
+                    </li>
+                <?php endif ?>
+            </ul>
+        </nav>
+    </header>
+    <main>

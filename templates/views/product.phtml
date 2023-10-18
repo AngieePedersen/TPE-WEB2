@@ -1,0 +1,15 @@
+<?php require 'templates/partials/header.phtml'; ?>
+
+<div class="product-page-container">
+    <div class="product-col-1">
+    
+    <p class="product-page-price">$<?= $product->Precio ?></p>
+    <p class="product-page-brand">Talle: <?= $product->Talle ?></p>
+    </div>
+    <div class="product-col-2">
+    <p class="product-page-description"><?= $product->Descripcion ?></p>
+    
+    </div>
+</div>
+
+<?php require 'templates/partials/footer.phtml'; ?>
